@@ -6,6 +6,10 @@ const requestInterceptorWrapper = require('./lib/request-interceptor-wrapper');
 const responseInterceptorWrapper = require('./lib/response-interceptor-wrapper');
 
 function axiosCookieJarSupport (instance) {
+  if (instance.wrapped) {
+    return;
+  }
+
   if (instance.create) {
     const createInstance = instance.create.bind(instance);
     instance.create = function create (defaultConfig) {
@@ -57,6 +61,8 @@ function axiosCookieJarSupport (instance) {
 
   requestInterceptorWrapper(instance);
   responseInterceptorWrapper(instance);
+
+  instance.wrapped = true;
 
   return instance;
 }
