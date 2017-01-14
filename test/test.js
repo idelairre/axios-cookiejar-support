@@ -2,7 +2,7 @@
 
 const assert = require('power-assert');
 const nock = require('nock');
-const tough = require('tough-cookie');
+const tough = require('umd-tough-cookie');
 const cookie = require('cookie');
 const decache = require('decache');
 const axiosCookieJarSupport = require('../');

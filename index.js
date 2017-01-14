@@ -1,6 +1,6 @@
 'use strict';
 
-const tough = require('tough-cookie');
+const tough = require('umd-tough-cookie');
 const utils = require('axios/lib/utils');
 const requestInterceptorWrapper = require('./lib/request-interceptor-wrapper');
 const responseInterceptorWrapper = require('./lib/response-interceptor-wrapper');
